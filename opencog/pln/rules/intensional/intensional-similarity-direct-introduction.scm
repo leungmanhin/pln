@@ -134,7 +134,7 @@
   (define (numerator A B-ats)
     (define (fuzzy-intersect B-at)
       (let* ((pat (gdr B-at)))
-        (min (get-pattern-strength A pat) (cog-mean B-at))))
+        (min (get-pattern-strength A pat) (get-pattern-strength (gar B-at) pat))))
     (fold + 0 (map fuzzy-intersect B-ats)))
 
   ;; Given the attraction links of A and B calculate the fuzzy sum of
